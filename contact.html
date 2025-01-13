@@ -1,0 +1,62 @@
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const isAuthenticated = localStorage.getItem("isAuthenticated");
+        if (!isAuthenticated) {
+            alert("Trebuie să te autentifici mai întâi!");
+            window.location.href = "register.html"; 
+        }
+    });
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Magazin Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Magazin Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="cart.html">Coș</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Contactează-ne</h2>
+            <form id="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Nume:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mesaj:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Trimite</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Magazin Online. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
